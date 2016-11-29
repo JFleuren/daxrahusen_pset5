@@ -7,23 +7,53 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12B411BC67E0ED9103E4E519 /* Pods_ManyList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F2B2E275310F831EEAFDFD /* Pods_ManyList.framework */; };
+		E913F05B1DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */; };
+		E913F05C1DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */; };
+		E913F05D1DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */; };
+		E913F05E1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */; };
+		E913F0601DEC965A00F5DFF8 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */; };
+		E91F26C71DEC7D6600372EAC /* AddListItemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */; };
+		E99A84BC1DEC658E00193828 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A84BB1DEC658E00193828 /* CoreDataManager.swift */; };
 		E9DDD7A61DEC29C900C7FDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7A51DEC29C900C7FDFD /* AppDelegate.swift */; };
-		E9DDD7A81DEC29C900C7FDFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7A71DEC29C900C7FDFD /* ViewController.swift */; };
 		E9DDD7AB1DEC29C900C7FDFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DDD7A91DEC29C900C7FDFD /* Main.storyboard */; };
 		E9DDD7AE1DEC29C900C7FDFD /* ManyList.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7AC1DEC29C900C7FDFD /* ManyList.xcdatamodeld */; };
 		E9DDD7B01DEC29C900C7FDFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E9DDD7AF1DEC29C900C7FDFD /* Assets.xcassets */; };
 		E9DDD7B31DEC29C900C7FDFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E9DDD7B11DEC29C900C7FDFD /* LaunchScreen.storyboard */; };
+		E9DDD7BE1DEC2FB800C7FDFD /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7BD1DEC2FB800C7FDFD /* ListTableViewController.swift */; };
+		E9DDD7C11DEC308800C7FDFD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7C01DEC308800C7FDFD /* DetailViewController.swift */; };
+		E9DDD7CB1DEC372700C7FDFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7CA1DEC372700C7FDFD /* Constants.swift */; };
+		E9DDD7CD1DEC3CF500C7FDFD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7CC1DEC3CF500C7FDFD /* SplitViewController.swift */; };
+		E9DDD7D01DEC3F0200C7FDFD /* TodoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7CE1DEC3F0200C7FDFD /* TodoItemCell.swift */; };
+		E9DDD7D11DEC3F0200C7FDFD /* TodoItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E9DDD7CF1DEC3F0200C7FDFD /* TodoItemCell.xib */; };
+		E9DDD7D31DEC418200C7FDFD /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		32F2B2E275310F831EEAFDFD /* Pods_ManyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		34540CB9D8C5ED20704A52D6 /* Pods-ManyList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManyList/Pods-ManyList.debug.xcconfig"; sourceTree = "<group>"; };
+		9EE497E748375236E888C371 /* Pods-ManyList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManyList/Pods-ManyList.release.xcconfig"; sourceTree = "<group>"; };
+		E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
+		E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListItemAlert.swift; sourceTree = "<group>"; };
+		E99A84BB1DEC658E00193828 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E9DDD7A21DEC29C900C7FDFD /* ManyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9DDD7A51DEC29C900C7FDFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E9DDD7A71DEC29C900C7FDFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E9DDD7AA1DEC29C900C7FDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E9DDD7AD1DEC29C900C7FDFD /* ManyList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ManyList.xcdatamodel; sourceTree = "<group>"; };
 		E9DDD7AF1DEC29C900C7FDFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E9DDD7B21DEC29C900C7FDFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E9DDD7B41DEC29C900C7FDFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E9DDD7BD1DEC2FB800C7FDFD /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
+		E9DDD7C01DEC308800C7FDFD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		E9DDD7CA1DEC372700C7FDFD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E9DDD7CC1DEC3CF500C7FDFD /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
+		E9DDD7CE1DEC3F0200C7FDFD /* TodoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoItemCell.swift; sourceTree = "<group>"; };
+		E9DDD7CF1DEC3F0200C7FDFD /* TodoItemCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodoItemCell.xib; sourceTree = "<group>"; };
+		E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +61,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12B411BC67E0ED9103E4E519 /* Pods_ManyList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0EADD54371F98238D22A6AF5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				32F2B2E275310F831EEAFDFD /* Pods_ManyList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		13943D2207290C8A8C24A220 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				34540CB9D8C5ED20704A52D6 /* Pods-ManyList.debug.xcconfig */,
+				9EE497E748375236E888C371 /* Pods-ManyList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		E9DDD7991DEC29C900C7FDFD = {
 			isa = PBXGroup;
 			children = (
 				E9DDD7A41DEC29C900C7FDFD /* ManyList */,
 				E9DDD7A31DEC29C900C7FDFD /* Products */,
+				13943D2207290C8A8C24A220 /* Pods */,
+				0EADD54371F98238D22A6AF5 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,8 +106,11 @@
 		E9DDD7A41DEC29C900C7FDFD /* ManyList */ = {
 			isa = PBXGroup;
 			children = (
+				E9DDD7BF1DEC2FF500C7FDFD /* Constants */,
+				E9DDD7BC1DEC2F9700C7FDFD /* Modal */,
+				E9DDD7BB1DEC2F8E00C7FDFD /* View */,
+				E9DDD7BA1DEC2F8700C7FDFD /* Controller */,
 				E9DDD7A51DEC29C900C7FDFD /* AppDelegate.swift */,
-				E9DDD7A71DEC29C900C7FDFD /* ViewController.swift */,
 				E9DDD7A91DEC29C900C7FDFD /* Main.storyboard */,
 				E9DDD7AF1DEC29C900C7FDFD /* Assets.xcassets */,
 				E9DDD7B11DEC29C900C7FDFD /* LaunchScreen.storyboard */,
@@ -67,6 +120,48 @@
 			path = ManyList;
 			sourceTree = "<group>";
 		};
+		E9DDD7BA1DEC2F8700C7FDFD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E9DDD7BD1DEC2FB800C7FDFD /* ListTableViewController.swift */,
+				E9DDD7C01DEC308800C7FDFD /* DetailViewController.swift */,
+				E9DDD7CC1DEC3CF500C7FDFD /* SplitViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E9DDD7BB1DEC2F8E00C7FDFD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E9DDD7CE1DEC3F0200C7FDFD /* TodoItemCell.swift */,
+				E9DDD7CF1DEC3F0200C7FDFD /* TodoItemCell.xib */,
+				E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */,
+				E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */,
+				E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E9DDD7BC1DEC2F9700C7FDFD /* Modal */ = {
+			isa = PBXGroup;
+			children = (
+				E99A84BB1DEC658E00193828 /* CoreDataManager.swift */,
+				E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */,
+				E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */,
+				E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */,
+				E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */,
+			);
+			name = Modal;
+			sourceTree = "<group>";
+		};
+		E9DDD7BF1DEC2FF500C7FDFD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				E9DDD7CA1DEC372700C7FDFD /* Constants.swift */,
+			);
+			name = Constants;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +169,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E9DDD7B71DEC29C900C7FDFD /* Build configuration list for PBXNativeTarget "ManyList" */;
 			buildPhases = (
+				28F7B8382229BAAB1EF07113 /* [CP] Check Pods Manifest.lock */,
 				E9DDD79E1DEC29C900C7FDFD /* Sources */,
 				E9DDD79F1DEC29C900C7FDFD /* Frameworks */,
 				E9DDD7A01DEC29C900C7FDFD /* Resources */,
+				8EBAEBFEBEDE0AD60E4343C1 /* [CP] Embed Pods Frameworks */,
+				FA6152B50E7FEA40DA423D31 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -129,20 +227,81 @@
 			files = (
 				E9DDD7B31DEC29C900C7FDFD /* LaunchScreen.storyboard in Resources */,
 				E9DDD7B01DEC29C900C7FDFD /* Assets.xcassets in Resources */,
+				E9DDD7D11DEC3F0200C7FDFD /* TodoItemCell.xib in Resources */,
 				E9DDD7AB1DEC29C900C7FDFD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		28F7B8382229BAAB1EF07113 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8EBAEBFEBEDE0AD60E4343C1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManyList/Pods-ManyList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FA6152B50E7FEA40DA423D31 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ManyList/Pods-ManyList-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E9DDD79E1DEC29C900C7FDFD /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E9DDD7A81DEC29C900C7FDFD /* ViewController.swift in Sources */,
+				E9DDD7D01DEC3F0200C7FDFD /* TodoItemCell.swift in Sources */,
+				E9DDD7BE1DEC2FB800C7FDFD /* ListTableViewController.swift in Sources */,
 				E9DDD7A61DEC29C900C7FDFD /* AppDelegate.swift in Sources */,
+				E913F05E1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */,
+				E913F05B1DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */,
+				E913F05C1DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */,
 				E9DDD7AE1DEC29C900C7FDFD /* ManyList.xcdatamodeld in Sources */,
+				E9DDD7CD1DEC3CF500C7FDFD /* SplitViewController.swift in Sources */,
+				E913F0601DEC965A00F5DFF8 /* RadiusButton.swift in Sources */,
+				E99A84BC1DEC658E00193828 /* CoreDataManager.swift in Sources */,
+				E913F05D1DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift in Sources */,
+				E91F26C71DEC7D6600372EAC /* AddListItemAlert.swift in Sources */,
+				E9DDD7D31DEC418200C7FDFD /* RoundedImageView.swift in Sources */,
+				E9DDD7C11DEC308800C7FDFD /* DetailViewController.swift in Sources */,
+				E9DDD7CB1DEC372700C7FDFD /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +420,7 @@
 		};
 		E9DDD7B81DEC29C900C7FDFD /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34540CB9D8C5ED20704A52D6 /* Pods-ManyList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K387VN5GQN;
@@ -269,11 +429,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DaxDesign.ManyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
 		E9DDD7B91DEC29C900C7FDFD /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9EE497E748375236E888C371 /* Pods-ManyList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = K387VN5GQN;
@@ -282,6 +444,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = DaxDesign.ManyList;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -304,6 +467,7 @@
 				E9DDD7B91DEC29C900C7FDFD /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
