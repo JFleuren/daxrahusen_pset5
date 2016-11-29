@@ -21,3 +21,7 @@ struct CoreDataClasses {
     static let TODOLIST = "TodoList"
     static let TODOITEM = "TodoItem"
 }
+
+struct NotificationsIdentifiers {
+    static let TEXTFIELDSTATE = Notification.Name("textFieldState")
+}

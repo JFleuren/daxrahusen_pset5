@@ -39,7 +39,7 @@ class ListTableViewController: UITableViewController {
         // set the emptyDataSource to this vc
         tableView.emptyDataSetSource = self
         
-        //
+        // 
         tableView.separatorStyle = .none
         
         // set the primary vc layered on top of the secondary view controller,
@@ -68,6 +68,7 @@ class ListTableViewController: UITableViewController {
 
     //
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         if segue.identifier == SegueIdentifiers.detailSegue {
             
             let navigationVC = segue.destination as! UINavigationController
@@ -89,11 +90,19 @@ class ListTableViewController: UITableViewController {
                 // initialize a Core Data To-Do List object
                 let todoList = TodoList(entity: entity!, insertInto: CoreDataManager.sharedInstance.managedObjectContext)
                 
+                // set the user id in the To-Do List title object
+                todoList.id = "\(NSDate())"
+                
                 // set the user text in the To-Do List title object
                 todoList.title = text!
                 
+                // set the finished state to the To-Do List title object
+                todoList.finished = false
+                
+                // append the todoList to the local array
                 self.todolists!.append(todoList)
                 
+                // save the new Core Data base
                 CoreDataManager.sharedInstance.saveContext()
                 
                 self.tableView.beginUpdates()
@@ -101,11 +110,13 @@ class ListTableViewController: UITableViewController {
                 let indexPath = IndexPath(row: self.todolists!.count - 1, section: 0)
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
                 
-                self.tableView.endUpdates()                
+                self.tableView.endUpdates()
+                
+                // set a Notification listener so the textField can update
+                NotificationCenter.default.post(name: NotificationsIdentifiers.TEXTFIELDSTATE, object: nil)
             }
         }
     }
-    
 
     // MARK: - Table view data source
 
@@ -121,7 +132,6 @@ class ListTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.todoListCell, for: indexPath)
         
         cell.textLabel?.text = todolists![indexPath.row].title
-//        cell.accessoryType = todolists![indexPath.row].finished ? .checkmark : .none
 
         return cell
     }
@@ -186,8 +196,6 @@ class ListTableViewController: UITableViewController {
         // return all actions in array
         return [deleteActtion]
     }
-
-    
 }
 
 // MARK: - UISplitViewControllerDelegate

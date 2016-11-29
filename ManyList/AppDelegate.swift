@@ -32,6 +32,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // set the barstyle color to the navigationbar
         navigationBar.barStyle = .black
         
+        //initialize first object for detailVC
+        setFirstObjectForDetail()
+        
         return true
     }
     
@@ -58,5 +61,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         coreDataManager.saveContext()
     }
+    
+    //initialize first object for detailVC
+    private func setFirstObjectForDetail() {
+        
+        let splitViewController = self.window!.rootViewController as! UISplitViewController
+        let rightNavController = splitViewController.viewControllers.last as! UINavigationController
+        let detailViewController = rightNavController.topViewController as! DetailViewController
+        
+        // set the fetchrequest to the entity table 'ToDoList'
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataClasses.TODOLIST)
+        
+        do {
+            
+            // try to fetch the new (up to date) To-Do items from Database
+            let todolists = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest) as? [TodoList]
+            
+            // set first object to
+            detailViewController.todoList = todolists?.first
+        
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+    }
+    
 }
 

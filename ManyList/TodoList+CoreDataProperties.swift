@@ -2,7 +2,7 @@
 //  TodoList+CoreDataProperties.swift
 //  
 //
-//  Created by Dax Rahusen on 28/11/2016.
+//  Created by Dax Rahusen on 29/11/2016.
 //
 //
 
@@ -19,6 +19,24 @@ extension TodoList {
     @NSManaged public var title: String?
     @NSManaged public var date: NSDate?
     @NSManaged public var finished: Bool
-    @NSManaged public var toDoItem: TodoItem?
+    @NSManaged public var id: String?
+    @NSManaged public var toDoItem: NSSet?
+
+}
+
+// MARK: Generated accessors for toDoItem
+extension TodoList {
+
+    @objc(addToDoItemObject:)
+    @NSManaged public func addToToDoItem(_ value: TodoItem)
+
+    @objc(removeToDoItemObject:)
+    @NSManaged public func removeFromToDoItem(_ value: TodoItem)
+
+    @objc(addToDoItem:)
+    @NSManaged public func addToToDoItem(_ values: NSSet)
+
+    @objc(removeToDoItem:)
+    @NSManaged public func removeFromToDoItem(_ values: NSSet)
 
 }

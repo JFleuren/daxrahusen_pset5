@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		12B411BC67E0ED9103E4E519 /* Pods_ManyList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32F2B2E275310F831EEAFDFD /* Pods_ManyList.framework */; };
-		E913F05B1DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */; };
-		E913F05C1DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */; };
-		E913F05D1DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */; };
-		E913F05E1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */; };
 		E913F0601DEC965A00F5DFF8 /* RadiusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */; };
+		E913F07D1DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F0791DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift */; };
+		E913F07E1DEDB4A100F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F07A1DEDB4A100F5DFF8 /* TodoList+CoreDataProperties.swift */; };
+		E913F07F1DEDB4A100F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F07B1DEDB4A100F5DFF8 /* TodoItem+CoreDataClass.swift */; };
+		E913F0801DEDB4A100F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E913F07C1DEDB4A100F5DFF8 /* TodoItem+CoreDataProperties.swift */; };
 		E91F26C71DEC7D6600372EAC /* AddListItemAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */; };
 		E99A84BC1DEC658E00193828 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E99A84BB1DEC658E00193828 /* CoreDataManager.swift */; };
 		E9DDD7A61DEC29C900C7FDFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7A51DEC29C900C7FDFD /* AppDelegate.swift */; };
@@ -33,11 +33,11 @@
 		32F2B2E275310F831EEAFDFD /* Pods_ManyList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ManyList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		34540CB9D8C5ED20704A52D6 /* Pods-ManyList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ManyList/Pods-ManyList.debug.xcconfig"; sourceTree = "<group>"; };
 		9EE497E748375236E888C371 /* Pods-ManyList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ManyList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ManyList/Pods-ManyList.release.xcconfig"; sourceTree = "<group>"; };
-		E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadiusButton.swift; sourceTree = "<group>"; };
+		E913F0791DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E913F07A1DEDB4A100F5DFF8 /* TodoList+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoList+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E913F07B1DEDB4A100F5DFF8 /* TodoItem+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E913F07C1DEDB4A100F5DFF8 /* TodoItem+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "TodoItem+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddListItemAlert.swift; sourceTree = "<group>"; };
 		E99A84BB1DEC658E00193828 /* CoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E9DDD7A21DEC29C900C7FDFD /* ManyList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ManyList.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -145,11 +145,11 @@
 		E9DDD7BC1DEC2F9700C7FDFD /* Modal */ = {
 			isa = PBXGroup;
 			children = (
+				E913F0791DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift */,
+				E913F07A1DEDB4A100F5DFF8 /* TodoList+CoreDataProperties.swift */,
+				E913F07B1DEDB4A100F5DFF8 /* TodoItem+CoreDataClass.swift */,
+				E913F07C1DEDB4A100F5DFF8 /* TodoItem+CoreDataProperties.swift */,
 				E99A84BB1DEC658E00193828 /* CoreDataManager.swift */,
-				E913F0571DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift */,
-				E913F0581DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift */,
-				E913F0591DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift */,
-				E913F05A1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift */,
 			);
 			name = Modal;
 			sourceTree = "<group>";
@@ -290,16 +290,16 @@
 				E9DDD7D01DEC3F0200C7FDFD /* TodoItemCell.swift in Sources */,
 				E9DDD7BE1DEC2FB800C7FDFD /* ListTableViewController.swift in Sources */,
 				E9DDD7A61DEC29C900C7FDFD /* AppDelegate.swift in Sources */,
-				E913F05E1DEC89EB00F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */,
-				E913F05B1DEC89EB00F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */,
-				E913F05C1DEC89EB00F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */,
 				E9DDD7AE1DEC29C900C7FDFD /* ManyList.xcdatamodeld in Sources */,
+				E913F0801DEDB4A100F5DFF8 /* TodoItem+CoreDataProperties.swift in Sources */,
+				E913F07F1DEDB4A100F5DFF8 /* TodoItem+CoreDataClass.swift in Sources */,
+				E913F07E1DEDB4A100F5DFF8 /* TodoList+CoreDataProperties.swift in Sources */,
 				E9DDD7CD1DEC3CF500C7FDFD /* SplitViewController.swift in Sources */,
 				E913F0601DEC965A00F5DFF8 /* RadiusButton.swift in Sources */,
 				E99A84BC1DEC658E00193828 /* CoreDataManager.swift in Sources */,
-				E913F05D1DEC89EB00F5DFF8 /* TodoList+CoreDataClass.swift in Sources */,
 				E91F26C71DEC7D6600372EAC /* AddListItemAlert.swift in Sources */,
 				E9DDD7D31DEC418200C7FDFD /* RoundedImageView.swift in Sources */,
+				E913F07D1DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift in Sources */,
 				E9DDD7C11DEC308800C7FDFD /* DetailViewController.swift in Sources */,
 				E9DDD7CB1DEC372700C7FDFD /* Constants.swift in Sources */,
 			);
