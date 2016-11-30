@@ -26,3 +26,11 @@ struct NotificationsIdentifiers {
     static let TEXTFIELDSTATE = Notification.Name("textFieldState")
     static let RELOADCONTROLLERSTATE = Notification.Name("ReloadControllerState")
 }
+
+struct ControllerIdentifiers {
+    static let RootSplitViewController = "RootSplitViewController"
+    static let MasterNavigationController = "MasterNavigationController"
+    static let DetailNavigationController = "DetailNavigationController"
+    static let ListTableViewController = "ListTableViewController"
+    static let DetailViewController = "DetailViewController"
+}

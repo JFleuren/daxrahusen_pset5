@@ -12,7 +12,7 @@
         <!--Empty Data Set Source-->
         <scene sceneID="b6p-Tf-Pct">
             <objects>
-                <viewController id="IUR-6g-bvl" customClass="DetailViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="IUR-6g-bvl" customClass="DetailViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="r1I-SL-00m"/>
                         <viewControllerLayoutGuide type="bottom" id="V73-2H-muP"/>
@@ -116,7 +116,7 @@
         <!--Many List-->
         <scene sceneID="CFn-1k-jaw">
             <objects>
-                <tableViewController clearsSelectionOnViewWillAppear="NO" id="fsu-pQ-Lqx" customClass="ListTableViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" clearsSelectionOnViewWillAppear="NO" id="fsu-pQ-Lqx" customClass="ListTableViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="9cl-0E-XSU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -163,7 +163,7 @@
         <!--Navigation Controller-->
         <scene sceneID="sUl-Pr-UMh">
             <objects>
-                <navigationController id="0jm-ir-MnY" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="MasterNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0jm-ir-MnY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="wsG-Pm-hZg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -174,12 +174,12 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g34-i6-u5X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="567" y="-1670"/>
+            <point key="canvasLocation" x="566" y="-1670"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="zhg-SI-gV4">
             <objects>
-                <splitViewController id="fnx-HG-fhM" customClass="SplitViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
+                <splitViewController storyboardIdentifier="RootSplitViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fnx-HG-fhM" customClass="SplitViewController" customModule="ManyList" customModuleProvider="target" sceneMemberID="viewController">
                     <connections>
                         <segue destination="0jm-ir-MnY" kind="relationship" relationship="masterViewController" id="bdV-UC-Uic"/>
                         <segue destination="Rfa-fX-piv" kind="relationship" relationship="detailViewController" id="wo7-6I-tFe"/>
@@ -187,12 +187,12 @@
                 </splitViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="02Z-hD-fxw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-386" y="-1342"/>
+            <point key="canvasLocation" x="-386" y="-1343"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Qrt-h4-PPM">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rfa-fX-piv" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DetailNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Rfa-fX-piv" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S30-pw-y9O">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>

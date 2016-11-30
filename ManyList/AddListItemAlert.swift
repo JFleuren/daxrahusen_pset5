@@ -30,18 +30,29 @@ class AddListItemAlert: UIAlertController {
             textField.clearButtonMode = .whileEditing
         }
         
-        // add a cancele action to the alertcontroller
+        // add a cancel action to the alertcontroller
         editAlert.addAction(UIAlertAction(title: "Cancel", style: .destructive) { (action) in
             
             // tell the completion handle it failed to edit the row
             completionHandler(false, nil)
         })
         
+        // add a submit action to the alertcontroller
         editAlert.addAction(UIAlertAction(title: "Add", style: .default) { (action) in
             
-            // tell the completion handle it succeed to add the row
-            // and put the new text is parameter to the completion handler
-            completionHandler(true, editAlert.textFields?.first?.text)
+            // get the text from the first (and only) textfield
+            let text = editAlert.textFields?.first?.text
+            
+            // check if the user input text is more then one character long
+            if ((text?.characters.count)! > 0) {
+                
+                // tell the completion handle it succeed to add the row
+                // and put the new text is parameter to the completion handler
+                completionHandler(true, editAlert.textFields?.first?.text)
+            }
+            
+            // tell the completion handle it failed to edit the row
+            completionHandler(false, nil)
         })
         
         // present the alertcontroller with animated options

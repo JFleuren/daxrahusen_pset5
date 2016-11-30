@@ -21,7 +21,7 @@ class ListTableViewController: UITableViewController {
     var fetchRequest: NSFetchRequest<NSFetchRequestResult>!
     var todolists: [TodoList]?
     var addListView: AddListItemAlert?
-    weak var toDoListDelegate: TodoListDelegate?
+    weak var toDoListDelegate: TodoListDelegate? = nil
     
     // MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
@@ -79,6 +79,7 @@ class ListTableViewController: UITableViewController {
             let navigationVC = segue.destination as! UINavigationController
             
             let detailVC = navigationVC.viewControllers.first as! DetailViewController
+            self.toDoListDelegate = detailVC
             detailVC.todoList = sender as? TodoList
         }
     }
@@ -88,6 +89,7 @@ class ListTableViewController: UITableViewController {
         addListView = AddListItemAlert()
         addListView!.addListView(controller: self) { (succeed, text) in
             if succeed {
+                
                 // get the appropriate table path for writing newly objects
                 let entity = NSEntityDescription.entity(forEntityName: CoreDataClasses.TODOLIST, in: CoreDataManager.sharedInstance.managedObjectContext)
                 
@@ -174,6 +176,10 @@ class ListTableViewController: UITableViewController {
                 // animate the indexed row from the tableview
                 tableView.deleteRows(at: [indexPath], with: .left)
                 
+                DispatchQueue.main.async {
+                    self.toDoListDelegate?.deleteTodoList()
+                }
+                
                 // check if the array is empty
                 if (self.todolists!.isEmpty) {
                     
@@ -185,8 +191,6 @@ class ListTableViewController: UITableViewController {
                         
                         // reload the tableview
                         tableView.reloadData()
-                        
-                        self.toDoListDelegate?.deleteTodoList()
                     }
                 }
                 
