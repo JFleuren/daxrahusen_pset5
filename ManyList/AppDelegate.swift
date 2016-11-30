@@ -66,6 +66,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func setFirstObjectForDetail() {
         
         let splitViewController = self.window!.rootViewController as! UISplitViewController
+        
+        let leftNavController = splitViewController.viewControllers.first as! UINavigationController
+        let masterViewController = leftNavController.topViewController as! ListTableViewController
+        
         let rightNavController = splitViewController.viewControllers.last as! UINavigationController
         let detailViewController = rightNavController.topViewController as! DetailViewController
         
@@ -79,7 +83,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             // set first object to
             detailViewController.todoList = todolists?.first
-        
+            masterViewController.toDoListDelegate = detailViewController
+            
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }

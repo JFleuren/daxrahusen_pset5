@@ -31,8 +31,7 @@ class DetailViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        fetchNewData(manager: CoreDataManager.sharedInstance.managedObjectContext)
-        
+        fetchNewData()
         setTextFieldBoardState()
     }
 
@@ -45,20 +44,12 @@ class DetailViewController: UIViewController {
         tableView.emptyDataSetSource = self
         
         todoItemTextField.delegate = self
-        
-        let cellNib = UINib(nibName: "TodoItemCell", bundle: nil)
-        tableView.register(cellNib, forCellReuseIdentifier: CellIdentifiers.todoItemCell)
     
         // set a Notification listener for when the Keyboard will be shown
         NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
         // set a Notification listener for when the Keyboard will be hidden
         NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.keyboardWillBeHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        
-        // set a Notification listener for when the user submited a new list
-        NotificationCenter.default.addObserver(self, selector: #selector(DetailViewController.setTextFieldBoardState), name: NotificationsIdentifiers.TEXTFIELDSTATE, object: nil)
-        
-        // set a Notification listener for when the Keyboard will be hidden
     }
     
     //MARK: viewWillDisappear
@@ -67,16 +58,15 @@ class DetailViewController: UIViewController {
         // remove the Notification listeners when the view will disapear
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
-        NotificationCenter.default.removeObserver(self, name: NotificationsIdentifiers.TEXTFIELDSTATE, object: nil)
         super.viewWillDisappear(animated)
     }
     
     // function which fetch new data from the DataBase
-    private func fetchNewData(manager: NSManagedObjectContext) {
+    private func fetchNewData() {
         
         todoItems.removeAll()
         
-        if todoList != nil {
+        if let todolistId = todoList?.id {
             
             navigationController?.navigationItem.title = todoList!.title
             
@@ -84,14 +74,14 @@ class DetailViewController: UIViewController {
             fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: CoreDataClasses.TODOITEM)
             
             // filter for the given To-DO Items with giving To-Do List
-            let predicate = NSPredicate(format: "listId = %@", todoList!.id!)
+            let predicate = NSPredicate(format: "listId = %@", todolistId)
             
             fetchRequest.predicate = predicate
             
             do {
                 
                 // try to fetch the new (up to date) To-Do items from Database
-                todoItems = try manager.fetch(fetchRequest) as! [TodoItem]
+                todoItems = try CoreDataManager.sharedInstance.managedObjectContext.fetch(fetchRequest) as! [TodoItem]
                 
             } catch let error as NSError {
                 print("Could not fetch \(error), \(error.userInfo)")
@@ -102,16 +92,6 @@ class DetailViewController: UIViewController {
         tableView.reloadData()
     }
     
-    @IBAction func cameraButtonClicked(_ sender: RadiusButton) {
-        
-        let todoImagePicker = UIImagePickerController()
-        todoImagePicker.allowsEditing = false
-        todoImagePicker.sourceType = .photoLibrary
-        todoImagePicker.delegate = self
-        present(todoImagePicker, animated: true, completion: nil)
-        
-    }
-    
     @IBAction func AddItemClicked(_ sender: RadiusButton) {
         
         // get the appropriate table path for writing newly objects
@@ -120,20 +100,13 @@ class DetailViewController: UIViewController {
         let todoItem = TodoItem(entity: entity!, insertInto: CoreDataManager.sharedInstance.managedObjectContext)
         todoItem.listId = todoList?.id
         todoItem.title = todoItemTextField.text
-        todoItem.subtext = ""
-        todoItem.finished = false
-        todoItem.picture = imagePicked ? imageData : nil
+        todoItem.finished = true
         
         todoItems.append(todoItem)
         
         CoreDataManager.sharedInstance.saveContext()
         
-        tableView.beginUpdates()
-        
-        let indexPath = IndexPath(row: todoItems.count - 1, section: 0)
-        tableView.insertRows(at: [indexPath], with: .automatic)
-        
-        tableView.endUpdates()
+        tableView.reloadData()
         
         todoItemTextField.text = ""
         todoItemTextField.resignFirstResponder()
@@ -182,6 +155,16 @@ class DetailViewController: UIViewController {
     }
 }
 
+// MARK: - TodoListDelegate
+extension DetailViewController: TodoListDelegate {
+    
+    func deleteTodoList() {
+        print("deleteTodoList: ")
+        todoItems.removeAll()
+        tableView.reloadData()
+    }
+}
+
 // MARK: - UITableViewDataSource
 extension DetailViewController: UITableViewDataSource {
     
@@ -191,8 +174,9 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.todoItemCell, for: indexPath) as! TodoItemCell
-        cell.updateUI(todoItem: todoItems[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: CellIdentifiers.todoItemCell, for: indexPath)
+        cell.accessoryType = todoItems[indexPath.row].finished ? .none : .checkmark
+        cell.textLabel?.text = todoItems[indexPath.row].title
         
         return cell
     }
@@ -212,6 +196,47 @@ extension DetailViewController: UITableViewDelegate {
         CoreDataManager.sharedInstance.saveContext()
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    private func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .destructive, title: "Delete") { (action, index) in
+            
+            // get the todo item form the array by index
+            let todoItem = self.todoItems[index.row]
+            
+            // delete the todo item from the database
+            CoreDataManager.sharedInstance.managedObjectContext.delete(todoItem)
+            
+            // remove the row from the local array by index
+            self.todoItems.remove(at: index.row)
+            
+            // try to save the new database state
+            CoreDataManager.sharedInstance.saveContext()
+            
+            // animate the indexed row from the tableview
+            tableView.deleteRows(at: [index], with: .left)
+            
+            // check if the array is empty
+            if self.todoItems.isEmpty {
+                
+                // define dispatch time now + 0.2 sec
+                let when = DispatchTime.now() + 0.2
+                
+                // delay the main thread with define dispatch time
+                DispatchQueue.main.asyncAfter(deadline: when) {
+                    
+                    // reload the tableview
+                    tableView.reloadData()
+                }
+            }
+        }
+        
+        return [deleteAction]
     }
 }
 
@@ -272,30 +297,5 @@ extension DetailViewController: DZNEmptyDataSetSource {
         
         // return a NSAttributedString object with defined text and attributes parameters
         return NSAttributedString.init(string: text as String, attributes: attr as? [String : Any])
-    }
-}
-
-// MARK: - UIImagePickerControllerDelegate
-extension DetailViewController: UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        
-        imagePicked = false
-        
-        dismiss(animated: true, completion: nil)
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        
-        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            
-            let compressedImageData = UIImagePNGRepresentation(pickedImage)
-            
-            imageData = compressedImageData as NSData?
-        }
-        
-        imagePicked = true
-        
-        dismiss(animated: true, completion: nil)
     }
 }

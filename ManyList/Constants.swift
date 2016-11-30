@@ -24,4 +24,5 @@ struct CoreDataClasses {
 
 struct NotificationsIdentifiers {
     static let TEXTFIELDSTATE = Notification.Name("textFieldState")
+    static let RELOADCONTROLLERSTATE = Notification.Name("ReloadControllerState")
 }

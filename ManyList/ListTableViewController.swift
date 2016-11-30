@@ -10,6 +10,10 @@ import UIKit
 import CoreData
 import DZNEmptyDataSet
 
+protocol TodoListDelegate: class {
+    func deleteTodoList()
+}
+
 class ListTableViewController: UITableViewController {
     
     // defined properties
@@ -17,6 +21,7 @@ class ListTableViewController: UITableViewController {
     var fetchRequest: NSFetchRequest<NSFetchRequestResult>!
     var todolists: [TodoList]?
     var addListView: AddListItemAlert?
+    weak var toDoListDelegate: TodoListDelegate?
     
     // MARK: viewWillAppear
     override func viewWillAppear(_ animated: Bool) {
@@ -74,8 +79,7 @@ class ListTableViewController: UITableViewController {
             let navigationVC = segue.destination as! UINavigationController
             
             let detailVC = navigationVC.viewControllers.first as! DetailViewController
-            
-            detailVC.todoList = sender as! TodoList
+            detailVC.todoList = sender as? TodoList
         }
     }
     
@@ -111,9 +115,6 @@ class ListTableViewController: UITableViewController {
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
                 
                 self.tableView.endUpdates()
-                
-                // set a Notification listener so the textField can update
-                NotificationCenter.default.post(name: NotificationsIdentifiers.TEXTFIELDSTATE, object: nil)
             }
         }
     }
@@ -184,6 +185,8 @@ class ListTableViewController: UITableViewController {
                         
                         // reload the tableview
                         tableView.reloadData()
+                        
+                        self.toDoListDelegate?.deleteTodoList()
                     }
                 }
                 
