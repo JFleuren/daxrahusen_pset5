@@ -33,7 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         navigationBar.barStyle = .black
         
         //initialize first object for detailVC
-        setFirstObjectForDetail()
+        
+        let device = UIDevice.current
+        
+        if device.orientation == .landscapeLeft || device.orientation == .landscapeRight {
+            setFirstObjectForDetail()
+        }
         
         return true
     }

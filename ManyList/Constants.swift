@@ -34,3 +34,8 @@ struct ControllerIdentifiers {
     static let ListTableViewController = "ListTableViewController"
     static let DetailViewController = "DetailViewController"
 }
+
+struct SaveStateIdentifiers {
+    static let TextFieldStateKey = "TextFieldStateKey"
+    static let ToDoListStateKey = "ToDoListStateKey"
+}

@@ -97,18 +97,31 @@ class DetailViewController: UIViewController {
         // get the appropriate table path for writing newly objects
         let entity = NSEntityDescription.entity(forEntityName: CoreDataClasses.TODOITEM, in: CoreDataManager.sharedInstance.managedObjectContext)
         
+        // create a new ToDoItem object pointing to the right identity and contextmanager
         let todoItem = TodoItem(entity: entity!, insertInto: CoreDataManager.sharedInstance.managedObjectContext)
+        
+        // set the list Primary identifier key
         todoItem.listId = todoList?.id
+        
+        // set the title object from the textFields text
         todoItem.title = todoItemTextField.text
+        
+        // set the finished state
         todoItem.finished = true
         
+        // append the todoItem to the array
         todoItems.append(todoItem)
         
+        // save the database changes
         CoreDataManager.sharedInstance.saveContext()
         
+        // reload the tableview
         tableView.reloadData()
         
+        // empty the text in the textfield
         todoItemTextField.text = ""
+        
+        // resign the keyboard focus on the textfield
         todoItemTextField.resignFirstResponder()
     }
     
@@ -153,15 +166,52 @@ class DetailViewController: UIViewController {
             self.view.layoutIfNeeded()
         }
     }
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        
+        if let textFieldString = todoItemTextField.text {
+            coder.encode(textFieldString, forKey: SaveStateIdentifiers.TextFieldStateKey)
+        }
+        
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        
+        if let textFieldString = coder.decodeObject(forKey: SaveStateIdentifiers.TextFieldStateKey) as? String {
+            todoItemTextField.text = textFieldString
+            todoItemTextField.isUserInteractionEnabled = true
+        }
+        
+        super.decodeRestorableState(with: coder)
+    }
+    
 }
 
 // MARK: - TodoListDelegate
 extension DetailViewController: TodoListDelegate {
     
+    // delegate function which will reload the tableview
     func deleteTodoList() {
-        print("deleteTodoList: ")
-        todoItems.removeAll()
-        tableView.reloadData()
+        
+        // check if size of the todoItems
+        if todoItems.count > 0 {
+            
+            // loop through all avaliable TodoItems
+            for todoItem in todoItems {
+                
+                CoreDataManager.sharedInstance.managedObjectContext.delete(todoItem)
+                
+                // remove all th items from the array
+                todoItems.removeAll()
+                
+                // reload the tableview
+                tableView.reloadData()
+            }
+            
+            // save the database changes
+            CoreDataManager.sharedInstance.saveContext()
+        }
     }
 }
 

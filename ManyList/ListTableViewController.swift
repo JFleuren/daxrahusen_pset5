@@ -84,9 +84,13 @@ class ListTableViewController: UITableViewController {
         }
     }
     
-    //
+    // function which will give the option to create a TodoList
     @IBAction func AddListButtonClicked(sender: UIBarButtonItem) {
+        
+        // initialize a custom AlertViewController
         addListView = AddListItemAlert()
+        
+        // add the listview to the screen with completion handler
         addListView!.addListView(controller: self) { (succeed, text) in
             if succeed {
                 
@@ -111,11 +115,16 @@ class ListTableViewController: UITableViewController {
                 // save the new Core Data base
                 CoreDataManager.sharedInstance.saveContext()
                 
+                // tell the table it will begin updating
                 self.tableView.beginUpdates()
                 
+                // get the last index from the array
                 let indexPath = IndexPath(row: self.todolists!.count - 1, section: 0)
+                
+                // insert the element in the tableview by given index
                 self.tableView.insertRows(at: [indexPath], with: .automatic)
                 
+                // tell the table it will end updating
                 self.tableView.endUpdates()
             }
         }

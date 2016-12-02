@@ -24,7 +24,6 @@
 		E9DDD7C11DEC308800C7FDFD /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7C01DEC308800C7FDFD /* DetailViewController.swift */; };
 		E9DDD7CB1DEC372700C7FDFD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7CA1DEC372700C7FDFD /* Constants.swift */; };
 		E9DDD7CD1DEC3CF500C7FDFD /* SplitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7CC1DEC3CF500C7FDFD /* SplitViewController.swift */; };
-		E9DDD7D31DEC418200C7FDFD /* RoundedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,7 +48,6 @@
 		E9DDD7C01DEC308800C7FDFD /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		E9DDD7CA1DEC372700C7FDFD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		E9DDD7CC1DEC3CF500C7FDFD /* SplitViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitViewController.swift; sourceTree = "<group>"; };
-		E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +127,6 @@
 		E9DDD7BB1DEC2F8E00C7FDFD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E9DDD7D21DEC418200C7FDFD /* RoundedImageView.swift */,
 				E913F05F1DEC965A00F5DFF8 /* RadiusButton.swift */,
 				E91F26C61DEC7D6600372EAC /* AddListItemAlert.swift */,
 			);
@@ -290,7 +287,6 @@
 				E913F0601DEC965A00F5DFF8 /* RadiusButton.swift in Sources */,
 				E99A84BC1DEC658E00193828 /* CoreDataManager.swift in Sources */,
 				E91F26C71DEC7D6600372EAC /* AddListItemAlert.swift in Sources */,
-				E9DDD7D31DEC418200C7FDFD /* RoundedImageView.swift in Sources */,
 				E913F07D1DEDB4A100F5DFF8 /* TodoList+CoreDataClass.swift in Sources */,
 				E9DDD7C11DEC308800C7FDFD /* DetailViewController.swift in Sources */,
 				E9DDD7CB1DEC372700C7FDFD /* Constants.swift in Sources */,

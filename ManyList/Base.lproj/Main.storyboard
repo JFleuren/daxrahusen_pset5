@@ -95,7 +95,9 @@
                             <constraint firstAttribute="trailing" secondItem="5mi-Dj-nu0" secondAttribute="trailing" id="CW9-3A-cap"/>
                             <constraint firstItem="tZU-SY-eoc" firstAttribute="leading" secondItem="bxe-M4-3bq" secondAttribute="leading" id="Hsd-TF-jTb"/>
                             <constraint firstItem="5mi-Dj-nu0" firstAttribute="leading" secondItem="bxe-M4-3bq" secondAttribute="leading" id="MnC-Gx-uXH"/>
-                            <constraint firstItem="5mi-Dj-nu0" firstAttribute="top" secondItem="bxe-M4-3bq" secondAttribute="top" constant="64" id="cwO-45-nhv"/>
+                            <constraint firstItem="5mi-Dj-nu0" firstAttribute="top" secondItem="bxe-M4-3bq" secondAttribute="top" constant="64" id="cwO-45-nhv">
+                                <variation key="heightClass=compact" constant="40"/>
+                            </constraint>
                             <constraint firstItem="V73-2H-muP" firstAttribute="top" secondItem="tZU-SY-eoc" secondAttribute="bottom" id="jLi-25-c8F"/>
                             <constraint firstItem="tZU-SY-eoc" firstAttribute="top" secondItem="5mi-Dj-nu0" secondAttribute="bottom" id="rG5-HP-8wl"/>
                             <constraint firstAttribute="trailing" secondItem="tZU-SY-eoc" secondAttribute="trailing" id="wn9-zj-c59"/>
@@ -126,11 +128,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="CKd-GE-pb2" id="SgY-xX-I6f">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fqr-9U-JjN">
-                                            <rect key="frame" x="15" y="0.0" width="325" height="43"/>
+                                            <rect key="frame" x="15" y="0.0" width="325" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
