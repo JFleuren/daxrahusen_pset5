@@ -167,19 +167,29 @@ class DetailViewController: UIViewController {
         }
     }
     
+    // function which encodes defined objects for restoration state
     override func encodeRestorableState(with coder: NSCoder) {
         
+        // get the avaliable text from the textfield
         if let textFieldString = todoItemTextField.text {
+            
+            // encode the textfield with defined Key
             coder.encode(textFieldString, forKey: SaveStateIdentifiers.TextFieldStateKey)
         }
         
         super.encodeRestorableState(with: coder)
     }
     
+    // function which decodes defined objects for restoration state
     override func decodeRestorableState(with coder: NSCoder) {
         
+        // check if value is avaliable for Key
         if let textFieldString = coder.decodeObject(forKey: SaveStateIdentifiers.TextFieldStateKey) as? String {
+            
+            // set the text tot the textfield
             todoItemTextField.text = textFieldString
+            
+            // enable the user interaction for textfield
             todoItemTextField.isUserInteractionEnabled = true
         }
         
