@@ -1,4 +1,4 @@
-# ## Many List
+## Many List
 
 A many to-do list app that has a list of tasks that the user needs to complete. 
 The application supports splitview for iPad and iPhone plus. 
@@ -13,40 +13,33 @@ The application makes use of the following 3rd party pods:
 
 
 ```swift
-    // function which adds dummy todo items in the database before loading the table
-    private func addDummyData(manager: NSManagedObjectContext) {
+    // function which encodes defined objects for restoration state
+    override func encodeRestorableState(with coder: NSCoder) {
         
-        // get the entity for the To-Do item with the defined managedcontext
-        let entity = NSEntityDescription.entity(forEntityName: "Todo", in: managedContext)
-        
-        // parse the json to a array of dictionaries
-        let parsedArray = parseJsonToDict()
-        
-        // loop through all the dictionary items in the array
-        for item in parsedArray {
+        // get the avaliable text from the textfield
+        if let textFieldString = todoItemTextField.text {
             
-            // initialize a Core Data To-Do  object
-            let todo = Todo(entity: entity!, insertInto: manager)
-            
-            // get the subject value and set in the object
-            todo.subject = item["subject"] as? String
-            
-            // get the finished value and set in the object
-            todo.finished = item["finished"] as! Bool
-            
-            // get the date value and set in the object
-            todo.date = NSDate().addingMinutes(item["date"] as! Int) as NSDate?
-            
-            // append the To-Do object to the array
-            todos?.append(todo)
+            // encode the textfield with defined Key
+            coder.encode(textFieldString, forKey: SaveStateIdentifiers.TextFieldStateKey)
         }
         
-        do {
-            // try to save the new Database state
-            try manager.save()
-        } catch let error as NSError {
-            print("Could not save \(error), \(error.userInfo)")
+        super.encodeRestorableState(with: coder)
+    }
+    
+    // function which decodes defined objects for restoration state
+    override func decodeRestorableState(with coder: NSCoder) {
+        
+        // check if value is avaliable for Key
+        if let textFieldString = coder.decodeObject(forKey: SaveStateIdentifiers.TextFieldStateKey) as? String {
+            
+            // set the text tot the textfield
+            todoItemTextField.text = textFieldString
+            
+            // enable the user interaction for textfield
+            todoItemTextField.isUserInteractionEnabled = true
         }
+        
+        super.decodeRestorableState(with: coder)
     }
 ```
 
